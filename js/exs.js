@@ -107,17 +107,51 @@ console.log(lista);
 
 // console.log(lista);
 
-let codigo = 'fim'
 
-while(lista != codigo){
-    let item = prompt('qual é o item a adicionar?')
-    lista.push(item);
-}
+
+// while(true){
+//     let item = prompt('qual é o item a adicionar?')
+//     if(item === 'fim'){
+//         break;
+//     }
+//     lista.push(item);
+// }
 
 
 
 //Parte 2:
 // No prompt, caso o user colocar apagar, apaga a última coisa que adicionou.
- 
+//  while(true){
+//     let item = prompt('qual é o item a adicionar?')
+//     if(item === 'fim'){
+//         break;
+//     }else if(item === 'apagar'){
+//         lista.pop();
+//     }
+//     lista.push(item);
+// }
+
 // Parte 3:
 // No prompt, quando o user coloca apagar abre um prompt para escrever o item a apagar e apaga o mesmo.
+while(true){
+    let item = prompt("qual é o item a adicionar (ou 'fim' para terminar, 'apagar' para remover um item)");
+    if(item === 'fim'){
+        console.log(lista);
+        break;
+    }else if(item === 'apagar'){
+        let itemApagar = prompt("Digite o nome do item que deseja apagar:");
+        let index = lista.indexOf(itemApagar);
+        if(index !== -1){
+            lista.splice(index, 1);
+            prompt(`item "${itemApagar}" removido.`);
+            console.log(lista);
+    }else {
+            prompt(`Item "${itemApagar}" não encontrado na lista.`);
+            console.log(lista);
+        }
+    }else{
+            lista.push(item);
+            console.log(lista);
+        }
+        console.log(lista);
+    }
