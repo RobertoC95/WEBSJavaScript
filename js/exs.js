@@ -99,8 +99,8 @@ alert(`Olá, ${PrimeiroNome} ${SegundoNome}`);*/
 
 //pag62
 
-let lista = ['agua', 'cerveja', 'vinho']
-console.log(lista);
+// let lista = ['agua', 'cerveja', 'vinho']
+// console.log(lista);
 // let item = prompt('qual é o item a adicionar?');
 
 // lista.push(item);
@@ -133,25 +133,76 @@ console.log(lista);
 
 // Parte 3:
 // No prompt, quando o user coloca apagar abre um prompt para escrever o item a apagar e apaga o mesmo.
-while(true){
-    let item = prompt("qual é o item a adicionar (ou 'fim' para terminar, 'apagar' para remover um item)");
-    if(item === 'fim'){
-        console.log(lista);
-        break;
-    }else if(item === 'apagar'){
-        let itemApagar = prompt("Digite o nome do item que deseja apagar:");
-        let index = lista.indexOf(itemApagar);
-        if(index !== -1){
-            lista.splice(index, 1);
-            prompt(`item "${itemApagar}" removido.`);
-            console.log(lista);
-    }else {
-            prompt(`Item "${itemApagar}" não encontrado na lista.`);
-            console.log(lista);
-        }
-    }else{
-            lista.push(item);
-            console.log(lista);
-        }
-        console.log(lista);
-    }
+// while(true){
+//     let item = prompt("qual é o item a adicionar (ou 'fim' para terminar, 'apagar' para remover um item)");
+//     if(item === 'fim'){
+//         console.log(lista);
+//         break;
+//     }else if(item === 'apagar'){
+//         let itemApagar = prompt("Digite o nome do item que deseja apagar:");
+//         let index = lista.indexOf(itemApagar);
+//         if(index !== -1){
+//             lista.splice(index, 1);
+//             alert(`item "${itemApagar}" removido.`);
+//             console.log(lista);
+//     }else {
+//             alert(`Item "${itemApagar}" não encontrado na lista.`);
+//             console.log(lista);
+//         }
+//     }else{
+//             lista.push(item);
+//             console.log(lista);
+//         }
+//         console.log(lista);
+//     }
+
+
+//pag62 correção
+//1
+
+// while(item.toLowerCase().trim() != 'fim'){
+//     lista.push(item);
+//     item = prompt ('adicione outro item')
+// }
+// for(let element of lista){
+//     console.log("comprar" + element);
+// }
+
+
+//pag47
+
+// const airplaneSeats = [
+//     ['Ruth', 'Anthony', 'Stevie'],
+//     ['Amelia', 'Pedro', 'Maya'],
+//     ['Xavier', 'Ananya', 'Luis'],
+//     ['luke', null , 'Deniz'],
+//     ['Rin', 'Shakira', 'Francisco']
+// ];
+// // airplaneSeats[3][1] = 'Roberto';
+// // console.log(airplaneSeats)
+
+// for(i=0; i<airplaneSeats.length; i++){
+//     for(j=0; j<airplaneSeats.length; j++){
+//         if(airplaneSeats[i][j] == null);
+//             airplaneSeats[i][j] =prompt("novo passageiro");
+//             break;
+//     } 
+// }
+// console.log(airplaneSeats)
+
+//pag 50
+
+
+// const product = {
+//     nome : 'chapeu',
+//     price : 1.99,
+//     moeda : '€',
+//     inStock : true,
+//     colors : ['vermelho', 'azul', 'verde']
+// }
+// console.log('o produto custa ' + product.price + product.moeda);
+// console.log('a cor do produto é' + product.colors[2])
+
+// product.price = 2.55;
+// console.log(product.price + product.moeda);
+

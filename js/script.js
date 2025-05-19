@@ -45,3 +45,48 @@ millionDolarQuestion = prompt('que tal a semana com feriado e apagão?') */
 // for(let i = 0 ; i<shoppinglist.length ; i++){
 //     console.log('compra ' + shoppinglist[i]);
 // }
+
+// let modules = [
+//     ['java', 'funções'],
+//      'js',
+//       'programação de servidor'];
+// console.log(modules[0][1][2]);  //o terceiro [] para ir buscar um elemento de uma string
+
+// let courseStructure = {
+//     courseName : 'Software Developer',
+//     hours : 1000,
+//     modules : ['js', 'algoritmia', 'mysql']
+// }
+
+// courseStructure.courseName = 'AWS';
+// console.log(courseStructure);
+
+function myshoppingList(){
+
+    let myshoppingList = ['batatas', 'pão'];
+let item = prompt('qual é o item a adicionar');
+
+myshoppingList.push(item);
+console.log(myshoppingList);
+
+for(let i = 0 ; i<myshoppingList.length ; i++){
+    console.log('compra ' + myshoppingList[i]);
+}
+for(let key of myshoppingList){
+    console.log(key);
+}
+}
+function modelObj(){
+    const product = {
+    nome : 'chapeu',
+    price : 1.99,
+    moeda : '€',
+    inStock : true,
+    colors : ['vermelho', 'azul', 'verde']
+}
+console.log('o produto custa ' + product.price + product.moeda);
+console.log('a cor do produto é' + product.colors[2])
+
+product.price = 2.55;
+console.log(product.price + product.moeda);
+}
