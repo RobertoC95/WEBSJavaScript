@@ -11,8 +11,43 @@ function isShortsWeather(temp){
 }
 
 function lastElement(){
-    let array = ['ze']
+    let array = ['ze','manel']
     for(element of array)
-        for(i=0; i<array.length; i++)
+        if(array[array.length-1] == null){
+            return null;
+        }else{
+            return array[array.length-1]
+        }
 
+}
+
+
+function sumArray(){
+    let arraySum = [50,50,1];
+    let sum=0;
+
+    for (let element of arraySum)
+       
+            sum += element;
+            
+    
+        return console.log(sum)
+
+}
+
+
+function returnDay(){
+
+    let DiadaSemana = ['segunda' , 'terça' ,'quarta' ,'quinta' ,'sexta' ,'sabado' ,'domingo'];
+
+    let escolha = prompt('Escolha um dia da semana (de 1 a 7)')
+
+    escolha = Number(escolha)
+
+    if(escolha < 0 || escolha > 7){
+        return null;
+    }else{
+    for (let element in DiadaSemana)
+        return DiadaSemana[escolha-1]
+        }
 }
