@@ -35,3 +35,57 @@ function snakeEyes(num1, num2){
         console.log('ArrrboK');
     }
 }
+
+//pag 78
+
+// const sum= function(x,y){
+//     let total = x + y
+
+//     return total;
+// }
+
+const sum = (w,y) =>{
+    return x + y
+}
+
+// pag 86
+
+const fullNames = [
+    {first: 'Albus', last: 'Dumbeldore'},
+    {first: 'Harry', last: 'Potter'},
+    {first: 'Hermione', last: 'Granger'},
+    {first: 'Ron', last: 'Weasley'},
+    {first: 'Rubeus', last: 'Hagrid'},
+    {first: 'Minerva', last: 'McGonagall'},
+    {first: 'Severus', last: 'Snape'}
+]
+/*
+const first = fullNames.map(function(name) {
+    return name.first;
+
+})
+console.log(first);*/
+
+// fullNames.forEach(function(name) {
+//     console.log(`O meu nome é ${name.last}, ${name.first} ${name.last}`)
+
+// })
+
+// fullNames.forEach(function(name) {
+//     console.log(item.first+ ' '+ item.last)
+
+// })
+
+//pag 88
+
+// function greet(name){
+//     console.log( 'Hey ' +name);
+
+// }
+// greet('Roberto')
+
+// const greet = (name) => {
+//     return 'Hey ' + name;
+// }
+
+const greet = name => 'Hey ' + name
