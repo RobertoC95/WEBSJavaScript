@@ -88,4 +88,25 @@ console.log(first);*/
 //     return 'Hey ' + name;
 // }
 
-const greet = name => 'Hey ' + name
+// const greet = name => 'Hey ' + name
+
+
+
+//pag 94
+
+// function validUserNames (arrayUserNames){
+//     const filteresUsernames = arrayUserNames.filter(username => {
+//         return username.length < 10
+//         }
+//     )
+//     return filteresUsernames;
+// } 
+    
+
+
+//97
+
+function allEvens(arrayNumeros){
+     return arrayNumeros.every(numero => numero%2 ===0)
+
+}
