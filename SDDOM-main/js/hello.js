@@ -35,27 +35,32 @@ btnEvent2.addEventListener('mouseover',alerta2);
 btnEvent3.addEventListener('click', corNova);
 
 
-let num1 = document.getElementById("#num1").value;
-let num2 = document.getElementById("#num2").value;
-let operacao = document.getElementById('operacao').value
 let cal = document.getElementById("calcular");
-let res = document.getElementById("resultado");
-
 
 function calculadora(){
-    switch(operação){
+
+    let num1 = +document.getElementById("num1").value;
+    let num2 = +document.getElementById("num2").value;
+    let operacao = document.getElementById('operacao').value;
+    let res = document.getElementById("resultado");
+
+    switch(operacao){
 
     case 'soma':
-        res.innerText = num1 +num2
+        res.innerText = num1 +num2;
+        break;
 
     case 'subtracao':
-        res.innerText = num1 - num2
+        res.innerText = num1 - num2;
+        break;
 
     case 'multiplicacao':
-        res.innerText = num1 * num2
+        res.innerText = num1 * num2;
+        break;
 
     case'divisao':
-        res.innerText = num1 / num2
+        res.innerText = num1 / num2;
+        break;
 }
 }
 
