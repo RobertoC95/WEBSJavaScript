@@ -82,4 +82,88 @@ btnEvent4.addEventListener('click', escrever);
 //7
 
 
+let myButton7 = document.getElementById('button7');
+let textoMagico = document.getElementById('solucao');
 
+function esconder(){
+
+    if(textoMagico.style.display === 'none'){
+        textoMagico.style.display = 'block'
+    }else {
+        textoMagico.style.display = 'none'
+    }
+    
+}
+
+myButton7.addEventListener('click', esconder);
+
+
+
+// 8
+
+
+let contador = +document.getElementById("contador").innerText;
+const myButton8 = document.getElementById('aumentar');
+const myButton9 = document.getElementById('diminuir');
+const myButton10 = document.getElementById('zerar');
+
+function aumentar(){
+    contador +=1;
+    document.getElementById("contador").innerText = contador
+    
+}
+
+function diminuir(){
+    contador -=1;
+    document.getElementById("contador").innerText = contador
+    
+}
+
+function reset(){
+    contador =0;
+    document.getElementById("contador").innerText = contador
+   
+}
+
+
+myButton8.addEventListener('click', aumentar);
+myButton9.addEventListener('click', diminuir);
+myButton10.addEventListener('click', reset);
+
+document.addEventListener('keydown',logKey )
+
+function logKey(event){
+    if (event.key === 'ArrowUp') {
+        aumentar()
+    }else if(event.key === 'ArrowDown'){
+        diminuir()
+    }else if(event.key === '0'){
+        reset()}
+    }
+
+
+//9
+
+const myButton11 = document.getElementById("Aprendido");
+const myButton12 = document.getElementById("botaoAdicionar");
+let lista = document.getElementById("lista");
+
+function aprender(){
+    let itens = lista.querySelectorAll('li');
+    itens.forEach(item => {
+        if (!item.innerText.endsWith(' -aprendido')) {
+            item.append(' -aprendido');
+        }
+    });
+}
+
+function adicionar(){
+    let novaLi = document.createElement('li');
+    novaLi.innerText = prompt("O que aprendeu mais?")
+    if (novaLi.innerText) { 
+        lista.appendChild(novaLi);
+    }
+}
+
+myButton11.addEventListener('click', aprender)
+myButton12.addEventListener('click', adicionar)
