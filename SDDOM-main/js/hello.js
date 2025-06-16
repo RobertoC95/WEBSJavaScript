@@ -2,7 +2,8 @@ const btnEvent1 = document.getElementById('hello');
 const btnEvent2 = document.getElementById('goodbye');
 const btnEvent3 = document.getElementById('container');
 const newP = document.getElementById("new-color");
-
+let cal = document.getElementById("calcular");
+let myForm = document.querySelector('form');
 
 function alerta1(){
     alert("Buenos dias Matosinhos!")
@@ -29,13 +30,6 @@ function corNova(){
     console.log(newColor)
     newP.innerText = newColor
 }
-
-btnEvent1.addEventListener('mouseover',alerta1);
-btnEvent2.addEventListener('mouseover',alerta2);
-btnEvent3.addEventListener('click', corNova);
-
-
-let cal = document.getElementById("calcular");
 
 function calculadora(){
 
@@ -64,8 +58,32 @@ function calculadora(){
 }
 }
 
+btnEvent1.addEventListener('mouseover',alerta1);
+btnEvent2.addEventListener('mouseover',alerta2);
+btnEvent3.addEventListener('click', corNova);
+cal.addEventListener('click', calculadora);
 
-cal.addEventListener('click', calculadora)
+
+myForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    console.log('cucu, faz validações e coisas de ui/ux, nomeadamente bloquer o botão');
+
+    const animalVal = document.querySelector('#animal').value;
+    const myList = document.querySelector('#zoo-animals');
+    const myLi = document.createElement('li');
+    myLi.textContent = animalVal;
+
+    myList.appendChild(myLi);
+
+    myForm.reset();
+
+
+// esperamos que o servidor nos dê ok que recebeu os dados
+//myForm.submit();
+})
+
+
+
 
 
 
