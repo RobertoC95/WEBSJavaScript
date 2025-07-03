@@ -345,3 +345,12 @@ myButton12.addEventListener('click', adicionar)
 //     }
 // });
 // });
+
+
+
+
+//1
+btnEvent1.addEventListener('click', function mudarCor (elemento, cor) {
+
+}
+)
