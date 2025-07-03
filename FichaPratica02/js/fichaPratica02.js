@@ -65,6 +65,7 @@ function escrever(){
     myDiv.appendChild(myP);
     myDiv.appendChild(myButton5);
     myDiv.appendChild(myButton6);
+
     myButton5.addEventListener('click', function(){
         myP.style.fontSize = '50px';
         myP.style.textAlign = 'center'
@@ -167,3 +168,180 @@ function adicionar(){
 
 myButton11.addEventListener('click', aprender)
 myButton12.addEventListener('click', adicionar)
+
+
+
+
+//Correcção da ficha: feito pelo Marcelo e validado por mim
+
+
+// //exercicio1//
+// function mudarCor(elemento, cor) {
+//     elemento.style.backgroundColor = cor;
+// }
+
+
+// const Vermelho = document.getElementById('vermelho');
+// const Verde = document.getElementById('verde');
+// const Laranja = document.getElementById('laranja');
+
+
+// Vermelho.addEventListener("click", function() {
+//     mudarCor(this, 'red');
+// });
+
+// Verde.addEventListener("click", function() {
+//     mudarCor(this, 'green');
+// });
+
+// Laranja.addEventListener("click", function() {
+//     mudarCor(this, 'orange');
+// });
+
+// //exercicio2//
+// let christmasGifts = [
+//     {
+//     nome: 'perfume',
+//     price: 40,
+//     },
+//     {
+//     nome: 'vinho',
+//     price: 10,
+//     },
+//     {
+//     nome: 'creme',
+//     price: 10,
+//     }
+// ]
+
+// // let itens = [];
+
+// // christmasGifts.forEach( preco => {
+// //     if (preco.price < 20) {
+// //        itens.push({
+// //             nome: preco.nome,
+// //             price: preco.price
+// //         });
+// //     }
+// // });
+
+// // console.log(itens);
+
+
+// let itens = christmasGifts.filter(preco => preco.price < 20);
+// console.log(itens);
+
+// //exercicio3//
+// const users = [
+//     {nome: "Rafaela", idade: 22, curso: "JS Avançado"},
+//     {nome: "Bruno", idade: 30, curso: "UI/UX desegn"},
+//     {nome: "Carla", idade: 25, curso: "AWS"}
+// ];
+
+// // users.forEach(texto => {
+// //   console.log(texto.nome + " tem " + texto.idade + " anos "
+// //     + "e está inscrito(a) no curso de " + texto.curso + "."
+// //   )
+// // });
+
+// users.map(function(user) {
+//   console.log(user.nome + " tem " + user.idade + " anos e está inscrito(a) no curso de " + user.curso + ".");
+// });
+
+// //exercicio 4 , 5 , 6//
+// const button = document.getElementById('addTexto');
+// const texto = document.getElementById('textoaqui');
+
+// button.addEventListener('click', function() {
+//     const p = document.createElement('p');
+//     p.innerText = "É só mais um esforço para tirar o curso de Software Developer e serei um grande programador.";
+
+//     const Aumentar = document.createElement('button');
+//     Aumentar.innerText = 'Aumentar texto';
+
+  
+//     const Diminuir = document.createElement('button');
+//     Diminuir.innerText = 'Diminuir texto';
+
+//     Aumentar.addEventListener('click', () => {
+//         let tamanhoAtual = parseInt(window.getComputedStyle(p).fontSize);
+//         p.style.fontSize = (tamanhoAtual + 1) + 'px';
+//         p.style.textAlign = "center";
+//     });
+
+   
+//     Diminuir.addEventListener('click', () => {
+//         let tamanhoAtual = parseInt(window.getComputedStyle(p).fontSize);
+//             p.style.fontSize = (tamanhoAtual - 1) + 'px';
+//             p.style.textAlign = "right";
+//     });
+
+//     texto.appendChild(p);
+//     texto.appendChild(Aumentar);
+//     texto.appendChild(Diminuir);
+// });
+
+// //exercicio7//
+// const botao = document.getElementById('botao');
+//     const paragrafo = document.getElementById('paragrafo');
+
+//     botao.addEventListener('click', function () {
+//       if (paragrafo.style.display === 'none') {
+//         paragrafo.style.display = 'block';
+//       } else {
+//         paragrafo.style.display = 'none';
+//       }
+//     });
+
+// //exercicio8//
+// let count = 0;
+
+// function atualizarContador(valor) {
+//   count += valor;
+//   document.getElementById('contador').textContent = count;
+// }
+
+// function resetarContador() {
+//   count = 0;
+//   document.getElementById('contador').textContent = count;
+// }
+
+// document.getElementById('aumentar').addEventListener('click', () => atualizarContador(1));
+// document.getElementById('diminuir').addEventListener('click', () => atualizarContador(-1));
+// document.getElementById('zerar').addEventListener('click', resetarContador);
+
+// document.addEventListener('keydown', evento => {
+//     console.log(evento.key)
+//   if (evento.key == 'ArrowUp') {
+//     atualizarContador(1);
+//   } else if (evento.key == 'ArrowDown') {
+//     atualizarContador(-1);
+//   }else if (evento.key == "0"){
+//     resetarContador();
+//   }
+// });
+
+// //exercicio 9 e 10//
+// const aprendido = document.getElementById('Aprendido');
+// const lista = document.getElementById('lista');
+// const botaoAdicionar = document.getElementById('botaoAdicionar');
+
+
+// aprendido.addEventListener('click', function () {
+//   const itens = lista.querySelectorAll('li');
+
+//   itens.forEach(function (item) {
+//     if (!item.innerText.includes('– aprendido')) {
+//       item.innerText += ' – aprendido';
+//     }
+//   });
+
+//   botaoAdicionar.addEventListener('click', function() {
+//   const novaAprendizagem = prompt('O que mais você aprendeu em JS?');
+//   if(novaAprendizagem != ""){
+//     const novoItem = document.createElement('li');
+//     novoItem.innerText = novaAprendizagem;
+//     lista.appendChild(novoItem);
+//     }
+// });
+// });
