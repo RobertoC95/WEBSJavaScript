@@ -1,19 +1,27 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UtilController;
+use App\Http\Controllers\UserController;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [UtilController::class, 'welcome']) ;
+
+Route::get('/home', [UtilController::class, 'index'])->name('home_route_name');
+
+Route::get('/hello', [UserController::class, 'helloUsers'])->name('hello_route_name');
+
+Route::get('/curso/{nomeCurso}', function($nomeCurso){
+    return '<h1>Curso da Cesae: '.$nomeCurso.'</h1>';
 });
 
-Route::get('/home', function () {
-    return view('welcome');
+Route::get('/modules/{id}', function($id){
+    return '<h1>Este é o módulo de: '.$id. '</h1>';
 });
 
-Route::get('/hello', function (){
-    return '<h1>Olá Mundo</h1>';
-});
+Route::get('/addUser', [UserController::class, 'addUsers'])->name('users.add');
 
-Route::get('/curso', function(){
-    return '<h1>Olá curso Software Developer!</h1>';
-});
+Route::get('/allUsers', [UserController::class, 'allUsers'])->name('users.all');
+
+Route::fallback(function(){
+return '<h1>What you lookin at?</h1>'."<a href=".route('hello_route_name').">You Lost?</a>";
+})->name('fallback_route_name');
