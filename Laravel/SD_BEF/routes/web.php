@@ -22,6 +22,10 @@ Route::get('/addUser', [UserController::class, 'addUsers'])->name('users.add');
 
 Route::get('/allUsers', [UserController::class, 'allUsers'])->name('users.all');
 
+Route::get('/tasks', [TaskController::class, 'allTasks'])-> name ('tasks.all');
+
+Route::get('/test-queries', [UserController::class, 'testSqlQueries'])->name('test.sql');
+
 Route::fallback(function(){
 return '<h1>What you lookin at?</h1>'."<a href=".route('hello_route_name').">You Lost?</a>";
 })->name('fallback_route_name');
