@@ -1,31 +1,52 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UtilController;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UtilController;
 
-Route::get('/', [UtilController::class, 'welcome']) ;
-
-Route::get('/home', [UtilController::class, 'index'])->name('home_route_name');
-
-Route::get('/hello', [UserController::class, 'helloUsers'])->name('hello_route_name');
-
-Route::get('/curso/{nomeCurso}', function($nomeCurso){
-    return '<h1>Curso da Cesae: '.$nomeCurso.'</h1>';
+Route::get('/', function () {
+    return view('welcome');
 });
 
-Route::get('/modules/{id}', function($id){
-    return '<h1>Este é o módulo de: '.$id. '</h1>';
+Route::get('/home', [UtilController::class, 'index'])->name('home_name');
+Route::get('/hello', [UtilController::class, 'sayHello'])->name('hello_route_name');
+Route::get('/curso', function(){
+    return '<h1>Olá alunos SD</h1>';
 });
 
-Route::get('/addUser', [UserController::class, 'addUsers'])->name('users.add');
+Route::get('/modules/{name}', function($name){
+    return '<h1>Este é o módulo de:'.$name.'</h1>';
+});
 
-Route::get('/allUsers', [UserController::class, 'allUsers'])->name('users.all');
+/* routes for Users */
+//rota que nos vai carregar um formulário
+Route::get('/add-users', [UserController::class, 'createUser'])->name('users.add');
 
-Route::get('/tasks', [TaskController::class, 'allTasks'])-> name ('tasks.all');
+//rota que nos pega nos dados do formulário e os envia para o servidor
+Route::post('/store-user', [UserController::class, 'storeUser'])->name('users.store');
 
-Route::get('/test-queries', [UserController::class, 'testSqlQueries'])->name('test.sql');
+
+//rota que pega nos dados do formulário para fazer um update
+Route::put('/update-user', [UserController::class, 'updateUser'])->name('users.update');
+
+
+Route::get('/users', [UserController::class, 'allUsers'])->name('users.all');
+Route::get('/view-user/{id}', [UserController::class, 'viewUser'])->name('user.show');
+Route::get('/delete-user/{id}', [UserController::class, 'deleteUser'])->name('users.delete');
+
+/* routes for Tasks */
+Route::get('/tasks', [TaskController::class, 'allTasks'])->name('tasks.all');
+Route::get('/add-tasks', [TaskController::class, 'createTask'])->name('tasks.add');
+Route::post('/store-task', [TaskController::class, 'storeTask'])->name('tasks.store');
+Route::get('/delete-task/{id}', [TaskController::class, 'deleteTask'])->name('tasks.delete');
+Route::get('/view-task/{id}', [TaskController::class, 'viewTask'])->name('tasks.show');
+Route::put('/update-task', [TaskController::class, 'updateTask'])->name('tasks.update');
+
+/* routes for testing proposes */
+Route::get('/test-queries', [UserController::class, 'testSqlQueries']);
+
 
 Route::fallback(function(){
-return '<h1>What you lookin at?</h1>'."<a href=".route('hello_route_name').">You Lost?</a>";
-})->name('fallback_route_name');
+    return "<a href=".route('hello_route_name').">Estás perdido?</a>";
+});

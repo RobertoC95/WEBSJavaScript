@@ -7,36 +7,33 @@ use Illuminate\Http\Request;
 class UtilController extends Controller
 {
     public function index() {
+
         $myName = $this->getUser();
 
-
         $loginUser = [
-            'name' => $myName,
-            'email' => 'francisco@gmail.com',
-            'phone' => '966666666',
+            'name' =>'Sara',
+            'email' => 'sara@gmail.com',
+            'phone' => '96666666'
         ];
 
         $cesaeInfo = $this->getCesaeInfo();
-        return view('utils.homepage', compact('myName','loginUser','cesaeInfo'));
+
+        return view('utils.homepage', compact('myName', 'loginUser','cesaeInfo'));
     }
 
-     public function sayHello(){
+    public function sayHello(){
         $myName = $this->getUser();
-        return view('users.hello', compact('myName'));
+        return view('utils.hello', compact('myName'));
     }
 
-    public function welcome()
-    {
-        return view('welcome');
-    }
-
-    private function getUser()
-    {
-        $myName = 'Roberto';
+    private function getUser(){
+        //query à base de dados para buscar o user
+        $myName = 'Sara';
         return $myName;
+
     }
 
-     private function getCesaeInfo(){
+    private function getCesaeInfo(){
 
         //simula dinamicamente ir à base de dados
         return $cesaeInfo = [
@@ -44,17 +41,5 @@ class UtilController extends Controller
             'address' => 'RUa do Cesae'
         ];
     }
-
-    // public function welcome() {
-    //     $myName = $this->getUser();
-    //     return view('user.hello', compact('myName'));
-    // }
-
-    // private function getUser(){
-    //     //query à base de dados para buscar o usar
-    //     $myName = 'Roberto';
-
-    //     return $myName;
-    // }
 
 }
