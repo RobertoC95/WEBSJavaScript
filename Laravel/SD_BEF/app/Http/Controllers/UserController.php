@@ -16,12 +16,7 @@ class UserController extends Controller
     }
 
     public function allUsers() {
-        $users = [
-            ['id' => 1, 'name'=> 'Rita', 'phone'=> '915555555'],
-            ['id' => 2, 'name'=> 'Rui', 'phone'=> '915555555'],
-            ['id' => 3, 'name'=> 'Patrícia', 'phone'=> '915555555'],
-        ];
-
+        
         //simula ir à base de dados carregar todos os users
         $users = $this->getUsers();
 
@@ -73,11 +68,14 @@ class UserController extends Controller
     private function getUsers()
     {
 
-        return [
+       //simula ir à base de dados carregar todos os users
+        $users = [
             ['id' => 1, 'name'=> 'Rita', 'phone'=> '915555555'],
             ['id' => 2, 'name'=> 'Rui', 'phone'=> '915555555'],
             ['id' => 3, 'name'=> 'Patrícia', 'phone'=> '915555555'],
         ];
+
+        return $users;
     }
 
     private function getUsersFromDB()

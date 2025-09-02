@@ -16,12 +16,7 @@ class UtilController extends Controller
             'phone' => '966666666',
         ];
 
-        $cesaeInfo = [
-            'name' => 'CESAE',
-            'address' => 'Rua Ciríaco Cardoso 186, 4150-212 Porto',
-            'email' => 'cesae@cesae.pt'
-
-        ];
+        $cesaeInfo = $this->getCesaeInfo();
         return view('utils.homepage', compact('myName','loginUser','cesaeInfo'));
     }
 
@@ -37,9 +32,18 @@ class UtilController extends Controller
 
     private function getUser()
     {
-        return 'Roberto';
+        $myName = 'Roberto';
+        return $myName;
     }
 
+     private function getCesaeInfo(){
+
+        //simula dinamicamente ir à base de dados
+        return $cesaeInfo = [
+            'name' => 'Cesae',
+            'address' => 'RUa do Cesae'
+        ];
+    }
 
     // public function welcome() {
     //     $myName = $this->getUser();
