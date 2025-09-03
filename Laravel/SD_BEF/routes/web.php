@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UtilController;
+use App\Http\Controllers\LivroController;
+use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -36,12 +38,35 @@ Route::get('/view-user/{id}', [UserController::class, 'viewUser'])->name('user.s
 Route::get('/delete-user/{id}', [UserController::class, 'deleteUser'])->name('users.delete');
 
 /* routes for Tasks */
-Route::get('/tasks', [TaskController::class, 'allTasks'])->name('tasks.all');
+Route::get('/tasks', [TaskController::class, 'allTasks'])->name('tasks.all')->middleware('auth');
 Route::get('/add-tasks', [TaskController::class, 'createTask'])->name('tasks.add');
 Route::post('/store-task', [TaskController::class, 'storeTask'])->name('tasks.store');
 Route::get('/delete-task/{id}', [TaskController::class, 'deleteTask'])->name('tasks.delete');
 Route::get('/view-task/{id}', [TaskController::class, 'viewTask'])->name('tasks.show');
 Route::put('/update-task', [TaskController::class, 'updateTask'])->name('tasks.update');
+
+
+
+/* routes for books */
+
+Route::get('/add-livros',[LivroController::class, 'createLivro'])->name('livros.add');
+
+Route::post('/store-livro', [LivroController::class, 'storeLivro'])->name('livros.store');
+
+Route::put('/update-livro', [LivroController::class, 'updateLivro'])->name('livros.update');
+
+
+Route::get('/livros', [LivroController::class, 'allLivros'])->name('livros.all');
+Route::get('/view-livros/{id}',[LivroController::class, 'viewLivro'])->name('livros.show');
+Route::get('/delete-livros/{id}', [LivroController::class, 'deleteLivro'])->name('livros.delete');
+
+
+
+/* routes for dashboard home */
+
+Route::get('/dashboard-view', [DashboardController::class, 'dashview'])->name('dash.view')->middleware('auth');
+
+
 
 /* routes for testing proposes */
 Route::get('/test-queries', [UserController::class, 'testSqlQueries']);

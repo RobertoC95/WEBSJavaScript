@@ -85,7 +85,7 @@ class LivroController extends Controller
             'user_id'=>$request->user_id,
         ]);
 
-        return redirect()->route('tasks.all')->with('message','Task adicionada com sucesso');
+        return redirect()->route('livros.all')->with('message','Livro adicionado com sucesso');
 
     }
 

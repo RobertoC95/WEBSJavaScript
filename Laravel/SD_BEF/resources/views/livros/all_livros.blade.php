@@ -35,9 +35,10 @@
                         <a href="{{ route('livros.delete', $livro->id) }}" class="btn btn-danger">Apagar</a></td>
 
                 </tr>
+                    <a href="{{ route('livros.add', $livros->id) }}" class="btn btn-info me-2">adicionar</a>
             @endforeach
 
-                <a href="{{ route('livros.add', $livro->id) }}" class="btn btn-info me-2">adicionar</a>
+
         </tbody>
     </table>
 @endsection
